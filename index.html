@@ -3,150 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafif Firdausy Ahla | Portfolio</title>
+    <meta name="description" content="Portfolio of Rafif Firdausy Ahla - Computer Science Student at BINUS University, Core Team at GDGoC, and Public Relations at BNCC.">
+    <title>Rafif Firdausy Ahla | Computer Science Student</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav>
-        <div class="logo">Rafif<span>Firdausy</span></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li> </ul>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-    </nav>
 
-    <section id="about">
-        <div class="about-content">
-            <h1>Hi, I'm Rafif Firdausy Ahla</h1>
-            <p>Computer Science Student at <strong>BINUS University @Malang</strong>. Passionate about web development, hardware integration, and technology innovation.</p>
-        </div>
-    </section>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <div class="card">
-                <h3>Smart City RFID Parking</h3>
-                <p>An Arduino-based miniature prototype featuring an RFID autogate system for modern parking solutions, developed using Arduino IDE.</p>
-            </div>
-            <div class="card">
-                <h3>Aespark Web-App</h3>
-                <p>A full-stack fan-website project built with the Laravel framework, utilizing PHP, HTML, CSS, and JavaScript for a responsive user experience.</p>
-            </div>
-            <div class="card">
-                <h3>SMARIHASTA 50 - DJIWO</h3>
-                <p>Led the backstage, property, and marketing teams for a major cultural performance, managing goods procurement and public engagement.</p>
-            </div>
-        </div>
-    </section>
+    <header class="header">
+        <nav class="nav-container" aria-label="Main Navigation">
+            <a href="#home" class="nav-logo" aria-label="Rafif Firdausy Home">
+                RAFIF<span>.</span>
+            </a>
 
-    <section id="experience">
-        <h2>Professional & Organizational Experience</h2>
-        <div class="experience-container">
-            <div class="exp-item">
-                <div class="exp-header">
-                    <h3>Bina Nusantara Computer Club (BNCC) @Malang</h3>
-                    <span>Sept 2024 - Present</span>
-                </div>
-                <p class="role">Public Relations Activist</p>
-                <ul>
-                    <li>Managing organizational communication and engaging with external partners.</li>
-                    <li>Collaborating to enhance BNCC's network and presence within the university.</li>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <h3>Google Developer Groups on Campus (GDGoC)</h3>
-                    <span>Sept 2024 - Present</span>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="control-btn" aria-label="Toggle Dark/Light Mode">
+                    <span class="theme-icon-container" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </span>
+                </button>
+                <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm <span class="text-highlight">Rafif Firdausy Ahla</span></h1>
+                    <p class="hero-subtitle">Computer Science Student at BINUS University @Malang & Core Team at GDGoC.</p>
+                    <a href="#projects" class="btn-primary">View My Projects</a>
                 </div>
-                <p class="role">Core Team - Product and Curriculum Division</p>
-                <ul>
-                    <li>Assisting in organizing developer-focused workshops and tech events.</li>
-                    <li>Contributing to digital asset creation and creative engagement strategies.</li>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-grid">
+                <div class="about-image-wrapper">
+                    <figure class="about-figure">
+                        <img src="https://via.placeholder.com/400x400" alt="Rafif Firdausy Ahla Profile" width="400" height="400" class="about-img">
+                    </figure>
+                </div>
+
+                <div class="about-text-wrapper">
+                    <h3 class="section-title">About Me</h3>
+                    <p class="about-description">
+                        I am a dedicated Computer Science student (Binusian 2029) at BINUS University @Malang with a strong foundation in Mechanical STEM from SMA Negeri 8 Malang. My passion lies at the intersection of web development, hardware prototyping, and organizational leadership.
+                    </p>
+                    <p class="about-description">
+                        Currently, I serve as a <strong>Public Relations Activist at BNCC</strong> and a <strong>Core Team member in the Product & Curriculum Division at GDGoC</strong>. I strive to combine technical excellence with effective communication to build impactful digital solutions.
+                    </p>
+                    <a href="#" class="btn-secondary" aria-label="Download My Resume">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h3 class="section-title">Featured Projects</h3>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-card-content">
+                            <h4 class="project-card-title">aespark - Laravel Web-App</h4>
+                            <p class="project-card-text">A fan-website application designed for aespa, focusing on a custom user interface and responsive web design.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code for aespark">View Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card-content">
+                            <h4 class="project-card-title">RFID Autogate Parking</h4>
+                            <p class="project-card-text">Led a development team to build an Arduino-based miniature prototype for a Smart City RFID parking system.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Arduino Uno</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">IoT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View RFID Project Details">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card-content">
+                            <h4 class="project-card-title">Pergelaran SMARIHASTA - DJIWO</h4>
+                            <p class="project-card-text">Co-led the backstage, property, and marketing teams for a large-scale performance, raising engagement and managing procurement.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Leadership</span>
+                                <span class="tech-tag">Marketing</span>
+                                <span class="tech-tag">Management</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Event Details">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements-section">
+            <div class="container">
+                <h3 class="section-title">Achievements</h3>
+                <ul class="achievements-list">
+                    <li><strong>UKBI "Unggul" Certification:</strong> Scored 623 (C2 CEFR equivalent) in the Indonesian Language Proficiency Test (2025).</li>
+                    <li><strong>OSN-P Finalist:</strong> Represented Malang City in the East Java Provincial Science Olympiad for Informatics/Computer (2024).</li>
+                    <li><strong>IKMC Silver Medalist:</strong> Awarded Silver in the International Kangaroo Mathematics Contest - Junior Level (2023).</li>
+                    <li><strong>OPSILON Bronze Medalist:</strong> Awarded Bronze in Statistics at the Olimpiade Update Festival VIII (2023).</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <h3>Freundschaft (German Club) - SMAN 8 Malang</h3>
-                    <span>2022 - 2024</span>
-                </div>
-                <p class="role">Leader (2023/2024) | Vice Leader (2022/2023)</p>
-                <ul>
-                    <li>Directed extracurricular activities and facilitated regular club meetings.</li>
-                    <li>Improved organizational efficiency and membership engagement through creative promotion.</li>
-                </ul>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h3 class="section-title text-center">Get In Touch</h3>
+                <form action="#" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="rafiffirdausy@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Let's connect!" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
+        </section>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <h3>Hasta Librarian Club - SMAN 8 Malang</h3>
-                    <span>2022 - 2024</span>
-                </div>
-                <p class="role">Event Division | Treasurer</p>
-                <ul>
-                    <li>Managed financial budgeting, expense tracking, and reporting.</li>
-                    <li>Executed events including journalist workshops and university library tours.</li>
-                </ul>
-            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Rafif Firdausy Ahla. Built with Accessibility in mind.</p>
+            <ul class="social-links" aria-label="Social Media">
+                <li><a href="mailto:rafiffirdausy@gmail.com" class="social-link" aria-label="Email Rafif">Email</a></li>
+                <li><a href="#" class="social-link" aria-label="LinkedIn Profile">LinkedIn</a></li>
+                <li><a href="#" class="social-link" aria-label="GitHub Profile">GitHub</a></li>
+            </ul>
         </div>
-    </section>
-
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <div class="achievement-list">
-            <div class="ach-card">
-                <span class="year">2025</span>
-                <p><strong>Certified Indonesian Speaker "Unggul" (UKBI)</strong> - Scored 623 (Equivalent to C2 CEFR Level).</p>
-            </div>
-            <div class="ach-card">
-                <span class="year">2024</span>
-                <p><strong>Finalist OSN-P East Java</strong> - Informatics/Computer category, representing Malang City.</p>
-            </div>
-            <div class="ach-card">
-                <span class="year">2023</span>
-                <p><strong>Silver Medalist</strong> - International Kangaroo Mathematics Contest (IKMC) Junior Level.</p>
-            </div>
-            <div class="ach-card">
-                <span class="year">2023</span>
-                <p><strong>Bronze Medal (Medali Perunggu)</strong> - OPSILON Olimpiade Update Festival VIII in Statistics.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-            <p>Have a question or want to work together? Drop a message below!</p>
-            <form id="contact-form" onsubmit="return false;">
-                <div class="input-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="input-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="input-group">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Rafif Firdausy Ahla. Built with Passion & AI Assisted Coding.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
