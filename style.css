@@ -66,69 +66,86 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
-/* --- Navigation (Glassmorphism) --- */
+/* --- LogicLens Inspired Navbar --- */
 .header {
+    background-color: #F4F8FA; /* Palette 50 */
+    border-bottom: 1px solid #E5ECF4; /* Palette 100 */
+    height: 70px;
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
-    height: var(--header-height);
-    background: rgba(244, 248, 250, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid var(--bg-secondary);
-    transition: var(--transition);
 }
-
-.header--scrolled {
-    height: 70px;
-    box-shadow: var(--card-shadow);
-}
-
-/* Update these specific sections in your style.css */
 
 .nav-container {
     display: flex;
-    justify-content: space-between; /* Spreads Logo, Menu, and Toggle evenly */
+    justify-content: space-between;
     align-items: center;
-    height: 100%;
-    max-width: 1140px; /* Centers the content within a standard width */
-    margin: 0 auto;    /* Perfectly centers the container */
-    padding: 0 2rem;   /* Prevents touching the edges on smaller screens */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* Ensure the logo isn't too far left */
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-left: 24px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #293142; /* Palette 950 */
+    letter-spacing: -1px;
 }
 
-/* Grouping the Menu and Toggle for better alignment */
-.nav-controls {
-    display: flex;
-    align-items: center;
-    margin-right: 24px;
-    gap: 1.5rem; /* Space between the Nav Links and the Dark Mode Button */
+.nav-logo span {
+    color: #5370A2; /* Palette 700 Accent */
 }
 
+/* Centering the Menu */
 .nav-list {
     display: flex;
     gap: 2.5rem;
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    color: #293142;
+    font-weight: 600;
     font-size: 0.95rem;
-    transition: var(--transition);
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: var(--accent);
+.nav-link i {
+    font-size: 1.1rem;
+    color: #293142;
+}
+
+.nav-link:hover, .nav-link:hover i {
+    color: #5370A2;
+}
+
+/* Dark Mode Toggle styling */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #293142;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: rotate(15deg);
+    color: #5370A2;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Mobile menu logic remains same */
+    }
 }
 
 /* --- Hero Section --- */
@@ -384,6 +401,7 @@ h1, h2, h3, h4 {
         font-size: 2.5rem;
     }
 }
+
 
 
 
