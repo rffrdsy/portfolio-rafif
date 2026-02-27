@@ -41,10 +41,16 @@ body {
     overflow-x: hidden;
 }
 
+/* Ensure all content sits in a centered column */
 .container {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 2rem;
+    max-width: 1200px; /* Standard professional width */
+    margin: 0 auto;    /* Centers the layout */
+    padding: 0 2rem;   /* Prevents content from touching mobile screen edges */
+}
+
+/* Give each section uniform breathing room */
+section {
+    padding: 100px 0; /* Consistent vertical gap between sections */
 }
 
 /* --- Typography & Global Elements --- */
@@ -401,6 +407,7 @@ h1, h2, h3, h4 {
         font-size: 2.5rem;
     }
 }
+
 
 
 
