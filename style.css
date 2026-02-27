@@ -102,12 +102,14 @@ h1, h2, h3, h4 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-main);
+    margin-left: 24px;
 }
 
 /* Grouping the Menu and Toggle for better alignment */
 .nav-controls {
     display: flex;
     align-items: center;
+    margin-right: 24px;
     gap: 1.5rem; /* Space between the Nav Links and the Dark Mode Button */
 }
 
@@ -336,4 +338,5 @@ h1, h2, h3, h4 {
         font-size: 2.5rem;
     }
 }
+
 
