@@ -326,28 +326,23 @@ h1, h2, h3, h4 {
 }
 
 /* --- Footer --- */
-/* --- Modern Minimalist Footer --- */
 .footer {
-    background-color: #293142; /* Palette 950: Dark Blue-Grey */
+    background-color: #293142; /* Palette 950 */
     padding: 3rem 0;
-    margin-top: 5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center; /* Forces all inline text to center */
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Spreads text and icons apart */
-    align-items: center;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    flex-direction: column; /* Stacks text and icons vertically */
+    align-items: center;    /* Centers them horizontally */
+    gap: 1.5rem;            /* Uniform gap between text and icons */
 }
 
 .copyright-text {
-    color: #A7C4DA; /* Palette 300: Soft Blue-Grey */
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: #A7C4DA; /* Palette 300 */
     margin: 0;
+    text-align: center; /* Ensures the text itself is centered */
 }
 
 .social-list {
@@ -407,6 +402,7 @@ h1, h2, h3, h4 {
         font-size: 2.5rem;
     }
 }
+
 
 
 
