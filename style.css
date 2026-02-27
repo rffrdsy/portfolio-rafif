@@ -85,18 +85,30 @@ h1, h2, h3, h4 {
     box-shadow: var(--card-shadow);
 }
 
+/* Update these specific sections in your style.css */
+
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Spreads Logo, Menu, and Toggle evenly */
     align-items: center;
     height: 100%;
+    max-width: 1140px; /* Centers the content within a standard width */
+    margin: 0 auto;    /* Perfectly centers the container */
+    padding: 0 2rem;   /* Prevents touching the edges on smaller screens */
 }
 
+/* Ensure the logo isn't too far left */
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-main);
-    text-decoration: none;
+}
+
+/* Grouping the Menu and Toggle for better alignment */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Space between the Nav Links and the Dark Mode Button */
 }
 
 .nav-list {
@@ -324,3 +336,4 @@ h1, h2, h3, h4 {
         font-size: 2.5rem;
     }
 }
+
