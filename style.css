@@ -1,45 +1,77 @@
-/* --- Root Variables --- */
+/* --- Color Palette dari Gambar --- */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1f2937;
-    --primary-color: #2563eb; /* Biru Binus */
-    --accent-color: #3b82f6;
-    --card-bg: #f3f4f6;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --transition: all 0.3s ease;
+    --color-50: #F4F8FA;
+    --color-100: #E5ECF4;
+    --color-200: #D1E0EC;
+    --color-300: #A7C4DA;
+    --color-400: #8CB0CE;
+    --color-500: #7197C0;
+    --color-600: #5E80B2;
+    --color-700: #5370A2;
+    --color-800: #485C85;
+    --color-900: #3D4D6B;
+    --color-950: #293142;
+
+    /* Theme Mapping */
+    --bg-color: var(--color-50);
+    --text-color: var(--color-950);
+    --primary-color: var(--color-700);
+    --accent-color: var(--color-500);
+    --card-bg: #ffffff;
+    --nav-bg: rgba(244, 248, 250, 0.9);
+    --border-color: var(--color-200);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Dark Mode Variables --- */
+/* --- Dark Mode Mapping --- */
 body.dark-mode {
-    --bg-color: #0f172a;
-    --text-color: #f8fafc;
-    --primary-color: #60a5fa;
-    --card-bg: #1e293b;
-    --nav-bg: rgba(15, 23, 42, 0.9);
+    --bg-color: var(--color-950);
+    --text-color: var(--color-50);
+    --primary-color: var(--color-300);
+    --accent-color: var(--color-400);
+    --card-bg: var(--color-900);
+    --nav-bg: rgba(41, 49, 66, 0.9);
+    --border-color: var(--color-800);
 }
 
-/* --- General Styles --- */
+/* --- Base Styles --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: var(--transition);
-    line-height: 1.6;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
 section {
-    padding: 100px 10%;
-    min-height: 80vh;
+    padding: 120px 10% 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-h1, h2, h3 {
-    margin-bottom: 20px;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60%;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
 }
 
 /* --- Navigation --- */
@@ -49,18 +81,17 @@ nav {
     align-items: center;
     padding: 20px 10%;
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    font-weight: 800;
 }
 
 .logo span {
@@ -70,16 +101,14 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-}
-
-.nav-links li {
-    margin-left: 30px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: var(--transition);
 }
 
@@ -88,108 +117,115 @@ nav {
 }
 
 #theme-toggle {
-    background: none;
+    background: var(--color-200);
     border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 1.2rem;
-    margin-left: 20px;
+    font-size: 1.1rem;
+    transition: var(--transition);
 }
 
-/* --- Hero Section --- */
-#about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+body.dark-mode #theme-toggle {
+    background: var(--color-800);
 }
 
-#about h1 {
-    font-size: 3rem;
-}
-
-#about strong {
-    color: var(--primary-color);
-}
-
-/* --- Project Cards --- */
-.project-grid {
+/* --- Cards (Projects & Experience) --- */
+.project-grid, .experience-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    gap: 25px;
 }
 
-.card {
+.card, .exp-item, .ach-card {
     background: var(--card-bg);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
-    border: 1px solid transparent;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.card:hover, .exp-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-color);
 }
 
-/* --- Achievements List --- */
-#achievements ul {
-    list-style: none;
-}
-
-#achievements li {
-    background: var(--card-bg);
+/* --- Experience Specifics --- */
+.exp-header {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 15px;
-    padding: 15px 20px;
-    border-left: 5px solid var(--primary-color);
-    border-radius: 5px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
 }
 
-/* --- Responsive & Burger Menu --- */
-.burger {
-    display: none;
-    cursor: pointer;
+.role {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px;
+/* --- Contact Form --- */
+.contact-container {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
+.input-group input:focus, .input-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    background: var(--color-800);
+    letter-spacing: 1px;
+}
+
+/* --- Burger Menu --- */
+.burger { display: none; cursor: pointer; }
+.burger div { width: 25px; height: 3px; background: var(--text-color); margin: 5px; transition: var(--transition); }
+
 @media screen and (max-width: 768px) {
     .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: var(--nav-bg);
-        display: flex;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        height: 100vh;
+        background: var(--nav-bg);
         flex-direction: column;
+        width: 100%;
         align-items: center;
-        width: 50%;
+        padding-top: 40px;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        padding-top: 50px;
     }
-
-    .nav-links li {
-        margin: 20px 0;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    /* Burger Animation */
-    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
-    .toggle .line2 { opacity: 0; }
-    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+    .nav-active { transform: translateX(0); }
+    .burger { display: block; }
 }
