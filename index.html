@@ -8,24 +8,27 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Rafif.<span>Ahla</span></div>
+        <div class="logo">Rafif<span>Firdausy</span></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li> </ul>
         </ul>
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-        <button id="theme-toggle">🌙</button>
+        <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
     </nav>
 
     <section id="about">
-        <h1>Hi, I'm Rafif Firdausy Ahla</h1>
-        <p>Computer Science Student at <strong>BINUS University @Malang</strong>[cite: 4, 6]. Passionate about web development and hardware integration[cite: 14, 21].</p>
+        <div class="about-content">
+            <h1>Hi, I'm Rafif Firdausy Ahla</h1>
+            <p>Computer Science Student at <strong>BINUS University @Malang</strong>. Passionate about web development, hardware integration, and technology innovation.</p>
+        </div>
     </section>
 
     <section id="projects">
@@ -33,23 +36,116 @@
         <div class="project-grid">
             <div class="card">
                 <h3>Smart City RFID Parking</h3>
-                <p>Arduino-based miniature prototype with RFID autogate system[cite: 14, 16].</p>
+                <p>An Arduino-based miniature prototype featuring an RFID autogate system for modern parking solutions, developed using Arduino IDE.</p>
             </div>
             <div class="card">
                 <h3>Aespark Web-App</h3>
-                <p>Laravel-based fan-website using PHP, HTML, CSS, and JS[cite: 21, 23].</p>
+                <p>A full-stack fan-website project built with the Laravel framework, utilizing PHP, HTML, CSS, and JavaScript for a responsive user experience.</p>
+            </div>
+            <div class="card">
+                <h3>SMARIHASTA 50 - DJIWO</h3>
+                <p>Led the backstage, property, and marketing teams for a major cultural performance, managing goods procurement and public engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional & Organizational Experience</h2>
+        <div class="experience-container">
+            <div class="exp-item">
+                <div class="exp-header">
+                    <h3>Bina Nusantara Computer Club (BNCC) @Malang</h3>
+                    <span>Sept 2024 - Present</span>
+                </div>
+                <p class="role">Public Relations Activist</p>
+                <ul>
+                    <li>Managing organizational communication and engaging with external partners.</li>
+                    <li>Collaborating to enhance BNCC's network and presence within the university.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <h3>Google Developer Groups on Campus (GDGoC)</h3>
+                    <span>Sept 2024 - Present</span>
+                </div>
+                <p class="role">Core Team - Product and Curriculum Division</p>
+                <ul>
+                    <li>Assisting in organizing developer-focused workshops and tech events.</li>
+                    <li>Contributing to digital asset creation and creative engagement strategies.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <h3>Freundschaft (German Club) - SMAN 8 Malang</h3>
+                    <span>2022 - 2024</span>
+                </div>
+                <p class="role">Leader (2023/2024) | Vice Leader (2022/2023)</p>
+                <ul>
+                    <li>Directed extracurricular activities and facilitated regular club meetings.</li>
+                    <li>Improved organizational efficiency and membership engagement through creative promotion.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <h3>Hasta Librarian Club - SMAN 8 Malang</h3>
+                    <span>2022 - 2024</span>
+                </div>
+                <p class="role">Event Division | Treasurer</p>
+                <ul>
+                    <li>Managed financial budgeting, expense tracking, and reporting.</li>
+                    <li>Executed events including journalist workshops and university library tours.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="achievements">
         <h2>Achievements</h2>
-        <ul>
-            <li>Finalist OSN-P East Java Informatics 2024 [cite: 50, 51]</li>
-            <li>Silver Medalist IKMC Junior Level 2023 [cite: 52, 53]</li>
-            <li>UKBI "Unggul" (C2 CEFR Level) - Score: 623 [cite: 48, 49]</li>
-        </ul>
+        <div class="achievement-list">
+            <div class="ach-card">
+                <span class="year">2025</span>
+                <p><strong>Certified Indonesian Speaker "Unggul" (UKBI)</strong> - Scored 623 (Equivalent to C2 CEFR Level).</p>
+            </div>
+            <div class="ach-card">
+                <span class="year">2024</span>
+                <p><strong>Finalist OSN-P East Java</strong> - Informatics/Computer category, representing Malang City.</p>
+            </div>
+            <div class="ach-card">
+                <span class="year">2023</span>
+                <p><strong>Silver Medalist</strong> - International Kangaroo Mathematics Contest (IKMC) Junior Level.</p>
+            </div>
+            <div class="ach-card">
+                <span class="year">2023</span>
+                <p><strong>Bronze Medal (Medali Perunggu)</strong> - OPSILON Olimpiade Update Festival VIII in Statistics.</p>
+            </div>
+        </div>
     </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <p>Have a question or want to work together? Drop a message below!</p>
+            <form id="contact-form" onsubmit="return false;">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rafif Firdausy Ahla. Built with Passion & AI Assisted Coding.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
