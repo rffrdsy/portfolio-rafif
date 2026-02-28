@@ -40,29 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. Dark/Light Mode Toggle ---
     const setTheme = (theme) => {
+        // Find the icon inside the button
         const themeIcon = themeToggle.querySelector('i');
         
         if (theme === 'dark') {
-            body.classList.add('dark-theme'); // Adds the class we made in CSS
+            body.classList.add('dark-theme');
             localStorage.setItem('portfolio-theme', 'dark');
-            if (themeIcon) themeIcon.className = 'fas fa-sun'; // Show sun to switch back to light
+            // Change icon to Sun when in Dark Mode
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
         } else {
-            body.classList.remove('dark-theme'); // Removes it to go back to :root (Light)
+            body.classList.remove('dark-theme');
             localStorage.setItem('portfolio-theme', 'light');
-            if (themeIcon) themeIcon.className = 'fas fa-moon'; // Show moon to switch to dark
+            // Change icon to Moon when in Light Mode
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
         }
     };
 
-    // Check for saved user preference or system preference
-    const savedTheme = localStorage.getItem('portfolio-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply the theme on load
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        setTheme('dark');
-    } else {
-        setTheme('light');
-    }
+    // Initialize
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    setTheme(savedTheme);
 
     themeToggle.addEventListener('click', () => {
         const isDark = body.classList.contains('dark-theme');
@@ -102,4 +104,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
