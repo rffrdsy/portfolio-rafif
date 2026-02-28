@@ -516,11 +516,21 @@ h1, h2, h3, h4 {
     }
 }
 
+.control-btn {
+    background: var(--bg-secondary); /* Give it a slight background */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    transition: var(--transition);
+}
 
-
-
-
-
-
-
-
+.control-btn:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
