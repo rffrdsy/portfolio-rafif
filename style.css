@@ -4,15 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* 1. This is your DEFAULT (Light Mode) */
 :root {
-    /* Main Palette from Image */
-    --bg-main: #F4F8FA;        /* Lightest - Palette 50 */
-    --bg-secondary: #E5ECF4;   /* Palette 100 */
-    --text-main: #293142;      /* Darkest - Palette 950 */
-    --text-muted: #5E80B2;     /* Palette 600 */
-    --accent: #5370A2;         /* Primary Blue - Palette 700 */
-    --accent-hover: #485C85;   /* Palette 800 */
-    --accent-soft: #D1E0EC;    /* Palette 200 */
+    /* Your original Palette */
+    --bg-main: #F4F8FA;
+    --bg-secondary: #E5ECF4;
+    --text-main: #293142;
+    --text-muted: #5E80B2;
+    --accent: #5370A2;
+    --accent-hover: #485C85;
+    --accent-soft: #D1E0EC;
+    --card-bg: #FFFFFF; /* Added this for easier switching */
     
     /* UI Constants */
     --card-shadow: 0 10px 30px -10px rgba(41, 49, 66, 0.1);
@@ -20,6 +22,81 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --container-max: 1140px;
     --header-height: 80px;
+}
+
+/* 2. This is your DARK MODE override */
+/* When JavaScript adds the 'dark-theme' class to the body, these values take over */
+body.dark-theme {
+    --bg-main: #1A1F2B;
+    --bg-secondary: #293142;
+    --text-main: #F4F8FA;
+    --text-muted: #A7C4DA;
+    --accent: #7FA9EE;
+    --accent-hover: #9DBFFF;
+    --accent-soft: rgba(127, 169, 238, 0.1);
+    --card-bg: #232936;
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+/* Light Mode Overrides */
+body.light-theme {
+    --bg-main: #F4F8FA;
+    --bg-secondary: #E5ECF4;
+    --text-main: #293142;
+    --text-muted: #5E80B2;
+    --accent: #5370A2;
+    --accent-hover: #485C85;
+    --accent-soft: #D1E0EC;
+    --card-bg: #FFFFFF;
+}
+
+/* Apply background to cards and sections */
+body { background-color: var(--bg-main); color: var(--text-main); transition: background 0.3s ease, color 0.3s ease; }
+.project-card, .contact-form, .achievements-list li { background: var(--card-bg); color: var(--text-main); }
+.header { background-color: var(--bg-main); border-bottom: 1px solid var(--bg-secondary); }
+
+/* --- Mobile Menu Logic --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-main);
+        transition: 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-menu.open {
+        left: 0;
+    }
+
+    .nav-list {
+        display: flex; /* Override display: none */
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+    }
+
+    .hamburger-line {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-main);
+        transition: 0.3s;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
+    .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
 /* --- Base Reset --- */
@@ -439,30 +516,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* --- Mobile Navigation & Responsiveness --- */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none; /* JS will toggle this with a separate class */
-    }
-    
-    .hamburger {
-        display: block;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-}
 
 
 
