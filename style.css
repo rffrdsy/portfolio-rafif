@@ -51,7 +51,26 @@ body.light-theme {
 
 /* Apply background to cards and sections */
 body { background-color: var(--bg-main); color: var(--text-main); transition: background 0.3s ease, color 0.3s ease; }
-.project-card, .contact-form, .achievements-list li { background: var(--card-bg); color: var(--text-main); }
+/* This ensures the cards turn dark and the text turns light */
+.project-card, 
+.contact-form, 
+.achievements-list li {
+    background-color: var(--card-bg) !important; /* !important ensures it beats old styles */
+    color: var(--text-main);
+    border: 1px solid var(--bg-secondary);
+}
+
+.tech-tag {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+}
+
+/* Fix the project titles and descriptions specifically */
+.project-card-title, 
+.project-card-text {
+    color: var(--text-main);
+}
 .header { background-color: var(--bg-main); border-bottom: 1px solid var(--bg-secondary); }
 
 /* --- Mobile Menu Logic --- */
@@ -153,8 +172,9 @@ h1, h2, h3, h4 {
 
 /* --- LogicLens Inspired Navbar --- */
 .header {
-    background-color: #F4F8FA; /* Palette 50 */
-    border-bottom: 1px solid #E5ECF4; /* Palette 100 */
+    background-color: var(--bg-main); 
+    border-bottom: 1px solid var(--bg-secondary);
+    transition: background-color 0.3s ease;
     height: 70px;
     display: flex;
     align-items: center;
@@ -534,3 +554,4 @@ h1, h2, h3, h4 {
     background: var(--accent-soft);
     color: var(--accent);
 }
+
