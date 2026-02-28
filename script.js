@@ -40,26 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. Dark/Light Mode Toggle ---
     const setTheme = (theme) => {
-        // Find the icon inside the button
         const themeIcon = themeToggle.querySelector('i');
-        
         if (theme === 'dark') {
-            body.classList.add('dark-theme');
-            localStorage.setItem('portfolio-theme', 'dark');
-            // Change icon to Sun when in Dark Mode
-            if (themeIcon) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
+            document.body.classList.add('dark-theme');
+            themeIcon.className = 'fas fa-sun'; // Show sun when dark
         } else {
-            body.classList.remove('dark-theme');
-            localStorage.setItem('portfolio-theme', 'light');
-            // Change icon to Moon when in Light Mode
-            if (themeIcon) {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
+            document.body.classList.remove('dark-theme');
+            themeIcon.className = 'fas fa-moon'; // Show moon when light
         }
+        localStorage.setItem('portfolio-theme', theme);
     };
 
     // Initialize
@@ -104,5 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
