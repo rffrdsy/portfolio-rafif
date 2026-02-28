@@ -39,44 +39,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 2. Dark/Light Mode Toggle ---
-    const updateThemeIcon = (isLight) => {
-        const iconContainer = themeToggle.querySelector('.theme-icon-container');
-        // If using FontAwesome as requested in task, we swap classes
-        // If using the SVG from previous HTML, you can toggle a class on the container
-        if (isLight) {
-            iconContainer.innerHTML = '<i class="fas fa-moon"></i>'; // Show moon for "Switch to Dark"
-        } else {
-            iconContainer.innerHTML = '<i class="fas fa-sun"></i>';  // Show sun for "Switch to Light"
-        }
-    };
-
     const setTheme = (theme) => {
-        if (theme === 'light') {
-            body.classList.add('light-theme');
-            localStorage.setItem('portfolio-theme', 'light');
-            updateThemeIcon(true);
-        } else {
-            body.classList.remove('light-theme');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        if (theme === 'dark') {
+            body.classList.add('dark-theme'); // Adds the class we made in CSS
             localStorage.setItem('portfolio-theme', 'dark');
-            updateThemeIcon(false);
+            if (themeIcon) themeIcon.className = 'fas fa-sun'; // Show sun to switch back to light
+        } else {
+            body.classList.remove('dark-theme'); // Removes it to go back to :root (Light)
+            localStorage.setItem('portfolio-theme', 'light');
+            if (themeIcon) themeIcon.className = 'fas fa-moon'; // Show moon to switch to dark
         }
     };
 
     // Check for saved user preference or system preference
     const savedTheme = localStorage.getItem('portfolio-theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else if (systemPrefersLight) {
+    // Apply the theme on load
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        setTheme('dark');
+    } else {
         setTheme('light');
     }
 
     themeToggle.addEventListener('click', () => {
-        const isLight = body.classList.contains('light-theme');
-        setTheme(isLight ? 'dark' : 'light');
+        const isDark = body.classList.contains('dark-theme');
+        setTheme(isDark ? 'light' : 'dark');
     });
-
 
     // --- 3. Scroll Effects & Smooth Scrolling ---
     
@@ -111,3 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
