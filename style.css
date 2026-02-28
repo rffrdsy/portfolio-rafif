@@ -71,7 +71,10 @@ body { background-color: var(--bg-main); color: var(--text-main); transition: ba
 .project-card-text {
     color: var(--text-main);
 }
-.header { background-color: var(--bg-main); border-bottom: 1px solid var(--bg-secondary); }
+.header {
+    background-color: var(--bg-main) !important;
+    border-bottom: 1px solid var(--bg-secondary);
+}
 
 /* --- Mobile Menu Logic --- */
 @media (max-width: 768px) {
@@ -393,11 +396,15 @@ h1, h2, h3, h4 {
     padding: 2rem 0;
 }
 
+.project-card, .contact-form, .achievements-list li {
+    background: var(--card-bg) !important;
+    color: var(--text-main);
+    border: 1px solid var(--bg-secondary);
+}
+
 .project-card {
-    background: #fff;
     border-radius: 16px;
     padding: 2rem;
-    border: 1px solid var(--bg-secondary);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
@@ -536,22 +543,26 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Make the toggle button visible and circular */
 .control-btn {
-    background: var(--bg-secondary); /* Give it a slight background */
-    border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    cursor: pointer;
+    background-color: var(--bg-secondary);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-main);
+    border: none;
+    cursor: pointer;
     transition: var(--transition);
+    font-size: 1.1rem;
+    margin-left: 1rem;
 }
 
 .control-btn:hover {
-    background: var(--accent-soft);
+    background-color: var(--accent-soft);
     color: var(--accent);
 }
+
 
